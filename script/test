@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# Usage: script/cibuild
+# Usage: script/test
 # Description: script to run test
 #
 
