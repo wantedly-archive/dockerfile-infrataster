@@ -20,8 +20,6 @@ nginx_image_server_spec.rb spec_helper.rb
 
 # Run feature tests
 $ docker run \
-    --rm \
-    -it \
     -v $PWD/spec:/test/spec
     -e "TARGET_IP=192.168.111.222"
     quay.io/wantedly/infrataster
