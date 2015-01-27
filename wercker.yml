@@ -1,0 +1,16 @@
+box: wercker-labs/docker
+build:
+  steps:
+    - script:
+        name: Check docker version
+        code: |
+          docker -v
+    - script:
+        name: Build target
+        code: |
+          cd ${WERCKER_SOURCE_DIR}
+          docker build -t target .
+    - script:
+        name: Run tester
+        code: >
+          script/run-tester
