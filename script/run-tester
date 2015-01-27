@@ -1,0 +1,27 @@
+#!/bin/sh
+#
+# Usage: script/test
+# Description: script to run test
+#
+
+set -e
+
+# this script should be run in project root
+BASE_DIRECTORY=`pwd`
+RUBY_VERSION="2.1.5"
+INFRATASTER_VERSION="0.2.2"
+
+docker kill target > /dev/null 2>&1 || true
+docker rm   target > /dev/null 2>&1 || true
+
+# Test Ruby version
+if [[ $(docker run --rm --name target target ruby -v | grep -e "^ruby ${RUBY_VERSION}" --line-buffered) = "" ]]; then
+  echo "Invalid Ruby version. expected: ${RUBY_VERSION}"
+  exit 1
+fi
+
+# Test Infrataster version
+if [[ $(docker run --rm --name target target gem list infrataster | grep -e "^infrataster (${INFRATASTER_VERSION})$" --line-buffered) = "" ]]; then
+  echo "Invalid Infrataster version. expected: ${INFRATASTER_VERSION}"
+  exit 1
+fi
