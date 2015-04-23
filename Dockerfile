@@ -1,4 +1,4 @@
-FROM quay.io/wantedly/ruby:2.1.5
+FROM ruby:2.1.6-slim
 MAINTAINER Seigo Uchida <spesnova@gmail.com> (@spesnova)
 
 RUN mkdir /test
