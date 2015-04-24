@@ -13,5 +13,4 @@ build:
     - script:
         name: Run tester
         code: >
-          cd ${WERCKER_SOURCE_DIR}
           script/run-tester
