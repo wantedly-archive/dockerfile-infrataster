@@ -1,4 +1,4 @@
-FROM quay.io/wantedly/ruby:2.1.5
+FROM ruby:2.1.6-slim
 MAINTAINER Seigo Uchida <spesnova@gmail.com> (@spesnova)
 
 ENV PHANTOMJS_VERSION 1.9.8
@@ -17,7 +17,12 @@ COPY Gemfile /test/Gemfile
 COPY Gemfile.lock /test/Gemfile.lock
 
 WORKDIR /test
-RUN bundle install -j4
+RUN apt-get update && \
+    apt-get install -y \
+      build-essential && \
+    rm -rf /var/lib/apt/lists/* && \
+    bundle install -j4 && \
+    apt-get purge -y --auto-remove build-essential
 
 VOLUME ["/test/spec"]
 

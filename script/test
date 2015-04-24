@@ -4,17 +4,29 @@
 # Description: script to run test
 #
 
-set -e
-
 # this script should be run in project root
 BASE_DIRECTORY=`pwd`
+INFRATASTER_VERSION="0.2.2"
 
 echo "==> Building target..."
 cd ${BASE_DIRECTORY}
-docker build -t target .
+docker build -t quay.io/wantedy/infrataster .
 
-echo "==> Running tester..."
-script/run-tester
+echo "==> Running test..."
+docker run \
+  --rm \
+  --name infrataster \
+  quay.io/wantedy/infrataster:latest \
+  gem list infrataster | \
+  grep -e $INFRATASTER_VERSION
+
+if [ $? -eq 0 ]
+then
+  echo "  Test passed"
+else
+  echo "  Test failed"
+  exit 1
+fi
 
 echo "==> Cleaning up..."
 docker kill target > /dev/null 2>&1 || true
