@@ -4,8 +4,6 @@
 # Description: script to run test
 #
 
-set -e
-
 # this script should be run in project root
 BASE_DIRECTORY=`pwd`
 INFRATASTER_VERSION="0.2.2"
@@ -22,7 +20,13 @@ docker run \
   gem list infrataster | \
   grep -e $INFRATASTER_VERSION
 
-test $? -eq 0 || exit 1
+if [ $? -eq 0 ]
+then
+  echo "  Test passed"
+else
+  echo "  Test failed"
+  exit 1
+fi
 
 echo "==> Cleaning up..."
 docker kill target > /dev/null 2>&1 || true
