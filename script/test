@@ -29,5 +29,5 @@ else
 fi
 
 echo "==> Cleaning up..."
-docker kill target > /dev/null 2>&1 || true
-docker rm   target > /dev/null 2>&1 || true
+docker kill infrataster > /dev/null 2>&1 || true
+docker rm   infrataster > /dev/null 2>&1 || true
