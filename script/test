@@ -6,7 +6,7 @@
 
 # this script should be run in project root
 BASE_DIRECTORY=`pwd`
-INFRATASTER_VERSION="0.2.2"
+INFRATASTER_VERSION="0.2.6"
 
 echo "==> Building target..."
 cd ${BASE_DIRECTORY}
