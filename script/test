@@ -10,13 +10,13 @@ INFRATASTER_VERSION="0.2.6"
 
 echo "==> Building target..."
 cd ${BASE_DIRECTORY}
-docker build -t quay.io/wantedy/infrataster .
+docker build -t quay.io/wantedly/infrataster .
 
 echo "==> Running test..."
 docker run \
   --rm \
   --name infrataster \
-  quay.io/wantedy/infrataster:latest \
+  quay.io/wantedly/infrataster:latest \
   gem list infrataster | \
   grep -e $INFRATASTER_VERSION
 
