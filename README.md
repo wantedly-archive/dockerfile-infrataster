@@ -6,7 +6,7 @@ Please see [official one's README](https://github.com/ryotarai/infrataster/) for
 
 * `latest`
  * Ruby 2.1.5
- * Infrataster v0.2.2
+ * Infrataster v0.2.6
 
 ## HOW TO USE
 
