@@ -1,4 +1,7 @@
-# Infrataster Docker Image [![Docker Repository on Quay.io](https://quay.io/repository/wantedly/infrataster/status "Docker Repository on Quay.io")](https://quay.io/repository/wantedly/infrataster)
+# Infrataster Docker Image
+[![Docker Repository on Quay.io](https://quay.io/repository/wantedly/infrataster/status "Docker Repository on Quay.io")](https://quay.io/repository/wantedly/infrataster)
+[![Build Status](https://travis-ci.org/wantedly/dockerfile-infrataster.svg)](https://travis-ci.org/wantedly/dockerfile-infrataster)
+
 Docker Image for [Infrataster](https://github.com/ryotarai/infrataster).
 Please see [official one's README](https://github.com/ryotarai/infrataster/) for more information about Infrataster.
 

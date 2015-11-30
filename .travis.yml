@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+script:
+  - docker -v
+  - script/test
+notifications:
+  slack:
+    secure: A0RxRblCf4MGo9S56ts8L3+r0JTOKiRPViiVGwd6moYd/1CF6a/nZXl2N6ua/CXHxMXyLvQb4o9ASLdUd8tYPxIfyv6QA2ysxe25b7GeWfu9JqO5T8V7PPzuDI1L4VkXNaLdp8NIbhYux1Ee+fpbwpzMmYLV9NIlXMYuql0Xd20=
